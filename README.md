@@ -1,6 +1,6 @@
 # 🗳️ Sistema de Votação - Teste Desenvolvedor 2025
 
-Projeto desenvolvido em **Laravel 12**, **PHP 8.4** e **MySQL**, para o teste técnico de Desenvolvedor 2025.
+Projeto desenvolvido em **Laravel 11**, **PHP 8.4** e **MySQL**, para o teste técnico de Desenvolvedor 2025.
 
 ---
 
