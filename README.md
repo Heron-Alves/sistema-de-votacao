@@ -1,111 +1,87 @@
 # 🗳️ Sistema de Votação - Teste Desenvolvedor 2025
 
-Projeto desenvolvido em **Laravel 11**, **PHP 8.4** e **MySQL**, para o teste técnico de Desenvolvedor 2025.
-
----
+Projeto desenvolvido em **Laravel 12**, **PHP 8.4** e **MySQL**, como parte do teste técnico de Desenvolvedor 2025.
 
 ## 🚀 Funcionalidades
 
-- CRUD de **Enquetes** (Criar, Editar, Excluir).
-- CRUD de **Opções** (mínimo 3, dinâmicas no formulário).
-- **Datas de início e fim** da enquete.
-- **Status automático** da enquete:
+- CRUD de Enquetes (Criar, Editar, Excluir).
+- CRUD de Opções (mínimo 3, dinâmicas no formulário).
+- Definição de datas de início e fim da enquete.
+- Status automático da enquete:
   - ⏳ Agendada
   - ✅ Em andamento
   - ❌ Finalizada
-- Votação com **atualização em tempo real (AJAX)**.
-- Botão **Votar** desabilitado fora do período válido.
-- Layout simples com **Bootstrap 5** e **Flexbox**.
-- Seeder para criar automaticamente enquetes de exemplo:
-  - Uma **Agendada**
-  - Uma **Em andamento**
-  - Uma **Finalizada**
-
----
+- Votação com atualização de votos em tempo real (AJAX).
+- Botão Votar desabilitado fora do período válido.
+- Layout com Bootstrap 5.
+- Seeder para popular o banco automaticamente:
+  - Enquete Agendada
+  - Enquete Em andamento
+  - Enquete Finalizada
 
 ## 📦 Requisitos
 
 - PHP >= 8.2  
 - Composer  
 - MySQL  
-- Node.js + NPM (opcional, caso queira recompilar assets)  
-
----
+- Node.js + NPM (opcional)  
 
 ## ⚙️ Instalação e Execução
 
-1. Clone o repositório:
+```bash
+git clone https://github.com/Heron-Alves/sistema-de-votacao.git
+cd sistema-de-votacao
+composer install
+cp .env.example .env
+Configurar o banco no .env:
 
-   ```bash
-   git clone https://github.com/Heron-Alves/sistema-de-votacao.git
-   cd sistema-de-votacao
-   
-2. Instale as dependências do Laravel:
-   composer install
-   
-3. Copie o arquivo .env.example para .env:
-   cp .env.example .env
-
-4. Configure seu banco no .env:
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=sistema_votacao
-    DB_USERNAME=root
-    DB_PASSWORD=
-    APP_TIMEZONE=America/Sao_Paulo
-
-5. Gere a chave da aplicação:
-   php artisan key:generate
-
-6. Rode as migrations e seeders:
-   php artisan migrate:fresh --seed
-
-7. Inicie o servidor local:
-   php artisan serve
+env
+Copiar
+Editar
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=sistema_votacao
+DB_USERNAME=root
+DB_PASSWORD=
+APP_TIMEZONE=America/Sao_Paulo
+bash
+Copiar
+Editar
+php artisan key:generate
+php artisan migrate:fresh --seed
+php artisan serve
+Acesse em: http://127.0.0.1:8000/enquetes
 
 🧪 Dados de exemplo
+Enquete Agendada (abre amanhã)
 
-Após rodar php artisan migrate:fresh --seed, serão criadas automaticamente 3 enquetes:
+Enquete Em andamento (aberta agora)
 
-Enquete Agendada (abre amanhã).
+Enquete Finalizada (já encerrada)
 
-Enquete Em andamento (aberta agora).
-
-Enquete Finalizada (já encerrada).
-
-Cada uma possui 3 opções de votação.
+Cada enquete possui 3 opções de votação.
 
 🖼️ Telas
-📋 Lista de Enquetes
+Lista de Enquetes
 
-Mostra título, datas, status e opções com total de votos.
+Criar Enquete
 
-Botões para Editar e Excluir.
+Editar Enquete
 
-➕ Criar Enquete
-
-Formulário para criar nova enquete com título, datas e opções dinâmicas.
-
-📝 Editar Enquete
-
-Edita título, datas e opções já existentes.
-
-✅ Votação
-
-Botão de votar ativo somente no período válido.
-
-Contador de votos atualizado via AJAX.
+Votação
 
 🎯 Diferenciais implementados
+Seeder automático
 
-Seeder automático para facilitar testes.
+Status com cores (badges Bootstrap)
 
-Status exibido com cores (badges Bootstrap).
+Feedback ao votar (AJAX ou redirect)
 
+Código organizado e comentado
 
-Código organizado e comentado.
+📹 Demonstração em vídeo
+🔗 (adicione aqui o link do vídeo)
 
 👨‍💻 Autor
-
 Desenvolvido por Heron Alves – Teste Técnico Desenvolvedor 2025
