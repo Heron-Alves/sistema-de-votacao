@@ -10,6 +10,8 @@ class Opcao extends Model
     use HasFactory;
 
     protected $fillable = ['enquete_id', 'texto', 'votos'];
+    protected $hidden = ['enquete'];
+
 
     public function enquete()
     {

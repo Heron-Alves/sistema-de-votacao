@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Enquete;
 use App\Models\Opcao;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class EnqueteController extends Controller
 {
@@ -30,8 +31,8 @@ class EnqueteController extends Controller
 
         $enquete = Enquete::create([
             'titulo' => $request->titulo,
-            'inicio' => \Carbon\Carbon::parse($request->inicio),
-            'fim'    => \Carbon\Carbon::parse($request->fim),
+            'inicio' => Carbon::parse($request->inicio),
+            'fim'    => Carbon::parse($request->fim),
         ]);
 
         foreach ($request->opcoes as $texto) {
@@ -39,6 +40,12 @@ class EnqueteController extends Controller
         }
 
         return redirect()->route('enquetes.index')->with('success', 'Enquete criada com sucesso!');
+    }
+
+    public function edit(Enquete $enquete)
+    {
+        $enquete->load('opcoes');
+        return view('enquetes.edit', compact('enquete'));
     }
 
     public function update(Request $request, Enquete $enquete)
@@ -52,8 +59,8 @@ class EnqueteController extends Controller
 
         $enquete->update([
             'titulo' => $request->titulo,
-            'inicio' => \Carbon\Carbon::parse($request->inicio),
-            'fim'    => \Carbon\Carbon::parse($request->fim),
+            'inicio' => Carbon::parse($request->inicio),
+            'fim'    => Carbon::parse($request->fim),
         ]);
 
         $enquete->opcoes()->delete();
@@ -64,4 +71,9 @@ class EnqueteController extends Controller
         return redirect()->route('enquetes.index')->with('success', 'Enquete atualizada com sucesso!');
     }
 
+    public function destroy(Enquete $enquete)
+    {
+        $enquete->delete();
+        return redirect()->route('enquetes.index')->with('success', 'Enquete excluída com sucesso!');
+    }
 }
