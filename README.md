@@ -36,8 +36,7 @@ cp .env.example .env
 Configurar o banco no .env:
 
 env
-Copiar
-Editar
+
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -46,8 +45,7 @@ DB_USERNAME=root
 DB_PASSWORD=
 APP_TIMEZONE=America/Sao_Paulo
 bash
-Copiar
-Editar
+
 php artisan key:generate
 php artisan migrate:fresh --seed
 php artisan serve
