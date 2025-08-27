@@ -24,7 +24,6 @@ Projeto desenvolvido em **Laravel 12**, **PHP 8.4** e **MySQL**, como parte do t
 - PHP >= 8.2  
 - Composer  
 - MySQL  
-- Node.js + NPM (opcional)  
 
 ## ⚙️ Instalação e Execução
 
